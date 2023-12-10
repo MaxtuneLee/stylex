@@ -12,7 +12,7 @@
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'StyleX',
-  tagline: 'Super fast atomic styles, no thought required.',
+  tagline: '没有思考负担，而且还超快的原子化 CSS',
   url: 'https://stylexjs.com',
   baseUrl: '/',
   trailingSlash: true,
@@ -64,7 +64,7 @@ const config = {
         },
         items: [
           {
-            label: 'Learn',
+            label: '学习',
             to: '/docs/learn',
             position: 'left',
           },
@@ -74,12 +74,12 @@ const config = {
             position: 'left',
           },
           {
-            label: 'Playground',
+            label: '实践',
             to: '/playground',
             position: 'left',
           },
           {
-            label: 'Blog',
+            label: '博客',
             to: '/blog',
             position: 'right',
           },
@@ -94,10 +94,10 @@ const config = {
       footer: {
         links: [
           {
-            title: 'Develop',
+            title: '开发',
             items: [
               {
-                label: 'Learn',
+                label: '学习',
                 to: '/docs/learn',
               },
               {
@@ -107,41 +107,41 @@ const config = {
             ],
           },
           {
-            title: 'Explore',
+            title: '探索',
             items: [
               {
-                label: 'Playground',
+                label: '实践',
                 to: '/playground',
               },
               {
-                label: 'Blog',
+                label: '博客',
                 href: '/blog',
               },
             ],
           },
           {
-            title: 'Participate',
+            title: '社区',
             items: [
               {
                 label: 'GitHub',
                 href: 'https://github.com/facebook/stylex/',
               },
               {
-                label: 'Acknowledgements',
+                label: '鸣谢',
                 href: '/docs/learn/acknowledgements',
               },
             ],
           },
           {
-            title: 'Other',
+            title: '其它',
             items: [
               // Please do not remove the privacy and terms, it's a legal requirement.
               {
-                label: 'Privacy',
+                label: '隐私',
                 href: 'https://opensource.fb.com/legal/privacy/',
               },
               {
-                label: 'Terms',
+                label: '协议',
                 href: 'https://opensource.fb.com/legal/terms/',
               },
             ],
@@ -156,7 +156,7 @@ const config = {
           href: 'https://opensource.fb.com',
         },
         // Please do not remove the credits, help to publicize Docusaurus :)
-        copyright: `Copyright © ${new Date().getFullYear()} Meta Platforms, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Meta Platforms, Inc. Built with Docusaurus. Chinese by MaxLee`,
       },
       metadata: [
         {name: 'og:title', content: 'StyleX'},

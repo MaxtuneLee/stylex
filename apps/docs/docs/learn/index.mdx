@@ -4,55 +4,52 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 sidebar_position: 0
-title: Introduction
+title: 介绍
 ---
 
-# Introduction to StyleX
+# StyleX 简介
 
-StyleX is a simple, easy to use JavaScript syntax and compiler for styling web
-apps.
+StyleX 是一个简单的、容易上手的 JavaScript 语法和编译器，用于为 Web 应用程序添加样式。
 
-StyleX combines the strengths and avoids the weaknesses of both inline styles
-and static CSS. Defining and using styles requires only local knowledge within a
-component, and avoids specificity issues while retaining features like Media
-Queries. StyleX builds optimized styles using collision-free atomic CSS which is
-superior to what could be authored and maintained by hand.
+StyleX 结合了内联样式和静态 CSS 的优点，弃置了它们的糟粕。定义和使用样式只和当前组件有关系，
+在保留了一些特性像媒体查询的同时，避免了特定的问题。StyleX 使用无冲突的原子 CSS 构建优化的样式，
+这比手工编写和维护的样式更好。
 
-## Features at a glance
+## 特性
 
-### Scalable
+### 可扩展性
 
-- Minimize CSS output with atomic CSS.
-- The CSS size plateaus even as the number of components grows.
-- Styles remain readable and maintainable within growing codebases.
+- 用原子化 CSS 最小化样式表的大小。
+- 无论组件数量增长到多少，CSS 文件大小都保持稳定。
+- 样式表一直保持可读性和可维护性。
 
-### Predictable
+### 结果可预期
 
-- Class names on an element can only directly style that same element.
-- No specificity issues.
-- “The last style applied always wins!”
+- 样式只能直接应用到当前类名的元素。
+- 没有特异性问题。
+- “最后应用的样式总是胜出！”
 
-### Composable
+### 可组合
 
-- Apply styles conditionally.
-- Merge and compose arbitrary styles across component and file boundaries.
-- Use local constants and expressions to keep styles DRY. Or repeat styles without worrying about performance.
+- 条件渲染样式。
+- 在组件和文件间合并和组合任意样式。
+- 用局部常量和表达式避免重复写样式。就算把样式写重了也不用担心性能问题。
 
-### Fast
+### 快速
 
-- No runtime style injection.
-- All styles are bundled in a static CSS file at compile-time.
-- Optimized runtime for merging class names.
+- 没有运行时的样式注入。
+- 所有样式都在编译时打包到静态的 CSS 文件中。
+- 运行时合并类名优化。
 
-### Type-Safe
+### 类型安全
 
-- Type-safe APIs.
-- Type-safe styles.
-- Type-safe themes.
+- 类型安全的 API。
+- 类型安全的样式。
+- 类型安全的主题。
 
-## Using StyleX
+## 使用 StyleX
 
-### Configure the compiler
+### 配置编译器
 
 ```js
 import plugin from '@stylexjs/rollup-plugin';
@@ -66,9 +63,9 @@ const config = () => ({
 export default config;
 ```
 
-### Define styles
+### 定义样式
 
-Styles are defined using an object syntax and the `create()` API.
+样式可以通过使用对象和 `create()` API 来定义。
 
 ```tsx
 import * as stylex from '@stylexjs/stylex';
@@ -82,8 +79,7 @@ const styles = stylex.create({
 });
 ```
 
-Any number of rules can be created by using additional keys and additional
-calls to `create()`:
+任意数量的规则都可以通过使用额外的键和额外的 `create()` 调用来创建：
 
 ```tsx
 import * as stylex from '@stylexjs/stylex';
@@ -112,10 +108,9 @@ const colorStyles = stylex.create({
 });
 ```
 
-### Use styles
+### 使用样式
 
-To use styles they must be passed to the `props()` function. Styles can be
-combined and applied conditionally using standard JavaScript expressions.
+通过使用 `props()` 函数，应用样式。样式可以使用标准的 JavaScript 表达式来实现组合和条件渲染。
 
 ```tsx
 import * as React from 'react';
@@ -136,44 +131,30 @@ function ReactDiv({ color, isActive, style }) {
 }
 ```
 
-The example above uses JSX. StyleX itself is framework agnostic. The same code
-works with other frameworks that accept `className` strings and `style` objects
-such as `SolidJS`, `Preact` or `Qwik`.
+上面的示例使用了 JSX。StyleX 本身是框架无关的。相同的代码可以在其他接受 `className` 和 `style` 对象的框架中使用，例如 `SolidJS`、`Preact` 或 `Qwik`。
 
-## Ideal use cases
+## 理想的使用场景
 
-StyleX works well in a wide variety of projects. However, it was designed to meet the
-challenges of particular use cases.
+StyleX 在各种各样的项目中都能跑得很好。但是，它是为了满足特别场景的挑战而设计的。
 
-### Authoring UI in JavaScript
+### 用 JavaScript 编写 UI
 
-StyleX is a CSS-in-JS library, which means that it is most useful when an app's UI is
-authored in JavaScript. If an application uses a framework like React, Preact, Solid,
-lit-html, or Angular, using StyleX should be a good fit.
+StyleX 是一个 CSS-in-JS 库，这意味着它在应用程序的 UI 是用 JavaScript 编写的时候最有用。如果应用程序使用像 React、Preact、Solid、lit-html 或 Angular 这样的框架，使用 StyleX 应该是一个很好的选择。
 
-Some frameworks, such as Svelte and Vue use custom file formats that are
-compiled to JavaScript at build time. StyleX can still be used in these
-frameworks, but may need some custom configuration.
+然而另外一些框架，比如说 Svelte 和 Vue，它们使用自定义的文件格式，在构建时编译为 JavaScript。StyleX 仍然可以在这些框架中使用，但可能需要一些自定义配置。
 
-### Large or growing projects
+### 大型或成长中的项目
 
-While StyleX works well for projects of all sizes, it really shines in larger
-applications.
+虽然 StyleX 适用于各种规模的项目，但它在大的项目中更能大放异彩。
 
-Since StyleX compiles to atomic class names, a big performance benefit is that
-the size of the CSS bundle plateaus as a project grows.
+对于一般项目来说，随着项目的增长，CSS 捆绑包的规模会越来越大。但是 StyleX 可以编译成原子类名，它能避免这种情况发生。
 
-### Reusable components
+### 可复用的 UI 组件
 
-The benefits of StyleX are greatest when used alongside reusable UI components.
+StyleX 的好处在于它可以和可复用的 UI 组件一起使用。
 
-For years, we have had to choose between "Design System" components that come
-with styles baked in but can be difficult to customize or "Headless" components
-that are completely unstyled.
+多年来，我们不得不在“设计系统”组件和“无样式”组件之间做出选择。前者的样式是固定的，但是很难定制；而后者则完全没有样式。
 
-StyleX empowers developers to build UI components that can have default styles _and_
-still be customizable.
+StyleX 赋予开发者构建高可复用 UI 组件的能力，这些组件可以有默认样式，同时还可以定制。
 
-Further, the consistency enables sharing these components by publishing them to
-NPM. As long as the consumer of a component is also using StyleX, the styles
-will be merged and composed correctly without any additional configuration.
+此外，可以通过将这些组件发布到 NPM 来共享这些组件。只要组件的使用者也在使用 StyleX，样式就会被正确地合并和组合，而无需任何额外的配置。

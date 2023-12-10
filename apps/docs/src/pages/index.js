@@ -11,7 +11,7 @@ import * as React from 'react';
 import * as stylex from '@stylexjs/stylex';
 import Layout from '@theme/Layout';
 import StylexAnimatedLogo from '@site/components/StylexAnimatedLogo';
-import {ZStack, ZStackItem} from '../../components/ZStack';
+import { ZStack, ZStackItem } from '../../components/ZStack';
 import CtaButton from '../../components/CtaButton';
 
 export default function Home() {
@@ -23,34 +23,35 @@ export default function Home() {
             <StylexAnimatedLogo style={styles.logo} />
           </h1>
           <h2 {...stylex.props(styles.subtitle)}>
-            The
+            驱动
             <span {...stylex.props(styles.subtitleHighlight)}>
               {' '}
-              styling system{' '}
-            </span>{' '}
-            that powers
-            <br />
-            <ZStack>
-              <ZStackItem style={[styles.subtitleHighlight, styles.facebook]}>
-                facebook.com
-              </ZStackItem>
-              <ZStackItem style={[styles.subtitleHighlight, styles.instagram]}>
-                instagram.com
-              </ZStackItem>
-              <ZStackItem style={[styles.subtitleHighlight, styles.whatsapp]}>
-                whatsapp.com
-              </ZStackItem>
-              <ZStackItem style={[styles.subtitleHighlight]}>
-                threads.net
-              </ZStackItem>
-            </ZStack>
+              <ZStack>
+                <ZStackItem style={[styles.subtitleHighlight, styles.facebook]}>
+                  facebook.com
+                </ZStackItem>
+                <ZStackItem style={[styles.subtitleHighlight, styles.instagram]}>
+                  instagram.com
+                </ZStackItem>
+                <ZStackItem style={[styles.subtitleHighlight, styles.whatsapp]}>
+                  whatsapp.com
+                </ZStackItem>
+                <ZStackItem style={[styles.subtitleHighlight]}>
+                  threads.net
+                </ZStackItem>
+              </ZStack>
+              {' '}
+            </span>
+            的样式系统
+
+
           </h2>
           <section {...stylex.props(styles.ctaSection)}>
             <CtaButton color="pink" to="/docs/learn/">
-              Get Started
+              马上开始
             </CtaButton>
             <CtaButton color="blue" to="/docs/learn/thinking-in-stylex/">
-              Thinking in StyleX
+              StyleX 哲学
             </CtaButton>
           </section>
         </section>

@@ -19,7 +19,7 @@ export default function Playground() {
         <CtaButton to="https://stackblitz.com/edit/stylex-next">
           StyleX + Next Demo
         </CtaButton>
-        <span>A full playground is coming soon.</span>
+        <span>完整的版本将会在之后推出</span>
       </div>
     </Layout>
   );
